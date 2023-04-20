@@ -68,6 +68,7 @@ body{
   font-weight: 900;
   background-color: transparent;
 }
-.formulario .botaoConv :hover{
-
+.formulario .botaoConv:hover{
+  background-color: rgb(253, 241, 3);
+ 
 }
