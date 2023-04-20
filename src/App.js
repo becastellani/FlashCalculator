@@ -39,7 +39,7 @@ function App() {
           </Box>
         
           <br />
-          <Button type="submit">Converter</Button>
+          <Button type="submit" className='botaoConv'>Converter</Button>
         </FormControl>
         </div>
         <div className='resultadoButton'>
