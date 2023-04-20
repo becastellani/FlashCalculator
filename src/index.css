@@ -11,6 +11,9 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .formulario {
   display: flex;

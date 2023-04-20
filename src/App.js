@@ -16,11 +16,15 @@ function App() {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+  event.preventDefault();
+  if (!time || !distance) {
+    alert('Por favor, preencha todos os campos!');
+  } else {
     const flashTime = (distance / 1100) * 60;
     const resultTime = flashTime.toFixed(2);
     setResult(`O Flash faria sua atividade em ${resultTime} minutos`);
   }
+}
 
   return (
     <div className="App">
