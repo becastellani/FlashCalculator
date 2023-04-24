@@ -26,7 +26,9 @@ function App() {
       const resultSeconds = (resultTime * 60).toFixed(2);
       setResult(`O Flash faria sua atividade em ${resultSeconds} segundos`);
     } else {
-      setResult(`O Flash faria sua atividade em ${resultTime} minutos`);
+      const resultMinutes = Math.floor(resultTime);
+      const resultSeconds = Math.round((resultTime - resultMinutes) * 60);
+      setResult(`O Flash faria sua atividade em ${resultMinutes} minutos e ${resultSeconds} segundos`);
     }
   }
 }
@@ -35,6 +37,9 @@ function App() {
     <div className="App">
       <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet"></link>
       <div className='container'>
+      <div className='titulo'>
+      <h1>Flash Calculator</h1>
+      </div>
       <div className='formulario'>
         <FormControl component="form" onSubmit={handleSubmit}>
           <Box>
