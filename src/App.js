@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css'
 import { Button, Box, FormControl } from '@mui/material';
-
+import Footer from './components/Footer'
 function App() {
   const [time, setTime] = useState('');
   const [distance, setDistance] = useState('');
@@ -22,7 +22,12 @@ function App() {
   } else {
     const flashTime = (distance / 1100) * 60;
     const resultTime = flashTime.toFixed(2);
-    setResult(`O Flash faria sua atividade em ${resultTime} minutos`);
+    if (resultTime < 1) {
+      const resultSeconds = (resultTime * 60).toFixed(2);
+      setResult(`O Flash faria sua atividade em ${resultSeconds} segundos`);
+    } else {
+      setResult(`O Flash faria sua atividade em ${resultTime} minutos`);
+    }
   }
 }
 
@@ -44,13 +49,16 @@ function App() {
         
           <br />
           <Button type="submit" className='botaoConv'>Converter</Button>
+          <div className='considere'>
+          <p>(Considerando a velocidade de 1100km/h)</p>
+          </div>
         </FormControl>
         </div>
         <div className='resultadoButton'>
         <p>{result}</p>
         </div>
         </div>
-      
+        <Footer />
     </div>
   );
 }
